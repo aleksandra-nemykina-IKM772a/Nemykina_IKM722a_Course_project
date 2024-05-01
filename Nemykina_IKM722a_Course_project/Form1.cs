@@ -34,10 +34,11 @@ namespace Nemykina_IKM722a_Course_project
         {
             MajorObject = new MajorWork();
             MajorObject.SetTime();
-            this.Mode = true;
+            MajorObject.Modify = false;// заборона запису
             About A = new About(); // створення форми About
             A.tAbout.Start();
             A.ShowDialog(); // відображення діалогового вікна About
+            this.Mode = true;
         }
 
         private void bStart_Click(object sender, EventArgs e)
@@ -103,8 +104,9 @@ namespace Nemykina_IKM722a_Course_project
         private void зберегтиЯкToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
-{
-                MessageBox.Show(SfdSave.FileName);
+            {
+                MajorObject.WriteSaveFileName(SfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл }
             }
         }
 
@@ -127,7 +129,7 @@ namespace Nemykina_IKM722a_Course_project
                 {
                     System.IO.DriveInfo D = new System.IO.DriveInfo(Disks[i]);
                     var bytesInGigabytes = 1073741824;
-                    disk += D.Name + "-" + "-" + (D.TotalSize/bytesInGigabytes).ToString() + "-" + (D.TotalFreeSpace/bytesInGigabytes).ToString()
+                    disk += D.Name + "-"  + (D.TotalSize/bytesInGigabytes).ToString() + "-" + (D.TotalFreeSpace/bytesInGigabytes).ToString()
                                        + (char)13;// змінній присвоюється ім’я диска, загальна кількість місця и вільне місце на диску
                 }
                 catch
