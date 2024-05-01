@@ -31,6 +31,7 @@ namespace Nemykina_IKM722a_Course_project
         private void Form1_Load(object sender, EventArgs e)
         {
             MajorObject = new MajorWork();
+            MajorObject.SetTime();
             this.Mode = true;
             About A = new About(); // створення форми About
             A.tAbout.Start();
@@ -74,6 +75,14 @@ namespace Nemykina_IKM722a_Course_project
                 tClock.Start();
                 e.KeyChar = (char)0;
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string s;
+            s = (System.DateTime.Now - MajorObject.GetTime()).ToString();
+            MessageBox.Show(s, "Час роботи програми"); // Виведення часу роботи програми і
+                                                       // повідомлення "Час роботи програми" на екран
         }
     }
 }

@@ -8,8 +8,19 @@ namespace Nemykina_IKM722a_Course_project
 {
     internal class MajorWork
     {
+        private DateTime TimeBegin; // час початку роботи програми
         private string Data; //вхідні дані
         private string Result; // Поле результату
+
+        public void SetTime() // метод запису часу початку роботи програми
+        {
+            this.TimeBegin = System.DateTime.Now;
+        }
+
+        public DateTime GetTime() // Метод отримання часу завершення програми
+        {
+            return this.TimeBegin;
+        }
 
         public void Write(string D)
         {
