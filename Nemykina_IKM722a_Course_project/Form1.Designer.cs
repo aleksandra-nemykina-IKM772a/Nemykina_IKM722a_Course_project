@@ -50,13 +50,17 @@
             this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OfdOpen = new System.Windows.Forms.OpenFileDialog();
             this.SfdSave = new System.Windows.Forms.SaveFileDialog();
+            this.dgwOpen = new System.Windows.Forms.DataGridView();
+            this.bSearch = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(304, 190);
+            this.label1.Location = new System.Drawing.Point(153, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -65,7 +69,7 @@
             // tbInput
             // 
             this.tbInput.Enabled = false;
-            this.tbInput.Location = new System.Drawing.Point(213, 229);
+            this.tbInput.Location = new System.Drawing.Point(62, 154);
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(233, 20);
             this.tbInput.TabIndex = 1;
@@ -73,7 +77,7 @@
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(287, 293);
+            this.bStart.Location = new System.Drawing.Point(136, 218);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(75, 23);
             this.bStart.TabIndex = 2;
@@ -214,11 +218,39 @@
             // 
             this.SfdSave.Filter = "рабочие файлы|*.SoM|Все файлы|*.*";
             // 
+            // dgwOpen
+            // 
+            this.dgwOpen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwOpen.Location = new System.Drawing.Point(357, 81);
+            this.dgwOpen.Name = "dgwOpen";
+            this.dgwOpen.Size = new System.Drawing.Size(240, 150);
+            this.dgwOpen.TabIndex = 4;
+            // 
+            // bSearch
+            // 
+            this.bSearch.Location = new System.Drawing.Point(431, 304);
+            this.bSearch.Name = "bSearch";
+            this.bSearch.Size = new System.Drawing.Size(75, 23);
+            this.bSearch.TabIndex = 6;
+            this.bSearch.Text = "Пошук";
+            this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(364, 256);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(233, 20);
+            this.tbSearch.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 500);
+            this.Controls.Add(this.bSearch);
+            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.dgwOpen);
             this.Controls.Add(this.bStart);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.label1);
@@ -231,6 +263,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,6 +292,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.OpenFileDialog OfdOpen;
         private System.Windows.Forms.SaveFileDialog SfdSave;
+        private System.Windows.Forms.DataGridView dgwOpen;
+        private System.Windows.Forms.Button bSearch;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }
 

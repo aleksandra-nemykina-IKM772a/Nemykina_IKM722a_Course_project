@@ -113,9 +113,10 @@ namespace Nemykina_IKM722a_Course_project
 
         private void відкритиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (OfdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття  файлу
-{
-                MessageBox.Show(OfdOpen.FileName);
+            if (OfdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогу відкриття файлу
+            {
+                MajorObject.WriteOpenFileName(OfdOpen.FileName); // відкриття файлу
+                MajorObject.ReadFromFile(dgwOpen); // читання даних з файлу
             }
         }
 
@@ -164,6 +165,11 @@ namespace Nemykina_IKM722a_Course_project
                 if (MessageBox.Show("Дані не були збережені. Продовжити вихід?", "УВАГА",
                 MessageBoxButtons.YesNo) == DialogResult.No)
                     e.Cancel = true; // припинити закриття
+        }
+
+        private void bSearch_Click(object sender, EventArgs e)
+        {
+            MajorObject.Find(tbSearch.Text);
         }
     }
 }
