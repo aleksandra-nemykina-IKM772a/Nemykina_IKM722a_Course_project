@@ -402,10 +402,9 @@ TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             if (button2.Text == "Старт")
-
             {
                 if (port.IsOpen) port.Close();
                 #region Задаем параметры порта

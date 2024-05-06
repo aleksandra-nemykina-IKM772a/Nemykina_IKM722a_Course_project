@@ -555,6 +555,7 @@
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(24, 132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(147, 280);
@@ -564,13 +565,14 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(52, 240);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
             this.button2.Text = "Старт";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button5_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox6
             // 
@@ -611,7 +613,7 @@
             "1",
             "1.5",
             "2",
-            "Ні"});
+            "Нет"});
             this.comboBox5.Location = new System.Drawing.Point(10, 161);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 21);
