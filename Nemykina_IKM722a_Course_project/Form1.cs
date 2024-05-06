@@ -20,6 +20,24 @@ namespace Nemykina_IKM722a_Course_project
         string InputData = String.Empty;
         delegate void SetTextCallback(string text);
 
+        void AddData(string text)
+        {
+            listBox1.Items.Add(text);
+        }
+        private void SetText(string text)
+        {
+            if (this.listBox1.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.AddData(text);
+            }
+        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -60,23 +78,6 @@ namespace Nemykina_IKM722a_Course_project
             {
                 comboBox1.Items.Add(port);
 
-            }
-        }
-
-        void AddData(string text)
-        {
-            listBox1.Items.Add(text);
-        }
-        private void SetText(string text)
-        {
-            if (this.listBox1.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(SetText);
-                this.Invoke(d, new object[] { text });
-            }
-            else
-            {
-                this.AddData(text);
             }
         }
 
@@ -496,5 +497,15 @@ TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
                 button2.Enabled = false;
             }
         }
+
+        private void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            InputData = port.ReadExisting();
+            if (InputData != String.Empty)
+            {
+                SetText(InputData);
+            }
+        }
+
     }
 }
