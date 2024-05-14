@@ -126,6 +126,7 @@
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(233, 20);
             this.tbInput.TabIndex = 1;
+            this.tbInput.TextChanged += new System.EventHandler(this.tbInput_TextChanged);
             this.tbInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInput_KeyPress);
             // 
             // bStart

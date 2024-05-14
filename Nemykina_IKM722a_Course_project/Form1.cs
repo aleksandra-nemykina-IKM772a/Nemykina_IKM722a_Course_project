@@ -100,26 +100,26 @@ namespace Nemykina_IKM722a_Course_project
                 this.Mode = true;
                 MajorObject.Write(tbInput.Text);// Запис даних у об'єкт
                 MajorObject.Task();// Обробка даних
-                label1.Text = MajorObject.Read();// Відображення результату
+                label1.Text = PersonalWork.Rphrase(tbInput.Text);
                 пускToolStripMenuItem.Text = "Старт";
             }
         }
 
         private void tbInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            tClock.Stop();
-            tClock.Start();
-            if ((e.KeyChar >= '0') & (e.KeyChar <= '9') | (e.KeyChar == (char)8))
-            {
-                return;
-            }
-            else
-            {
-                tClock.Stop();
-                MessageBox.Show("Неправильний символ", "Помилка");
-                tClock.Start();
-                e.KeyChar = (char)0;
-            }
+            //tClock.Stop();
+            //tClock.Start();
+            //if ((e.KeyChar >= '0') & (e.KeyChar <= '9') | (e.KeyChar == (char)8))
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    tClock.Stop();
+            //    MessageBox.Show("Неправильний символ", "Помилка");
+            //    tClock.Start();
+            //    e.KeyChar = (char)0;
+            //}
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -507,5 +507,9 @@ TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
             }
         }
 
+        private void tbInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
