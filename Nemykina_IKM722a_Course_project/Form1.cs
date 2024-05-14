@@ -118,7 +118,7 @@ namespace Nemykina_IKM722a_Course_project
             //    tClock.Stop();
             //    MessageBox.Show("Неправильний символ", "Помилка");
             //    tClock.Start();
-            //    e.KeyChar = (char)0; 1
+            //    e.KeyChar = (char)0; 
             //}
         }
 
