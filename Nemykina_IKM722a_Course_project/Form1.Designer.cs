@@ -131,7 +131,7 @@
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(321, 250);
+            this.bStart.Location = new System.Drawing.Point(320, 238);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(75, 28);
             this.bStart.TabIndex = 2;
