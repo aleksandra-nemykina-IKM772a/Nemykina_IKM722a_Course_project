@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,13 +74,20 @@ namespace Nemykina_IKM722a_Course_project
 
         public void Task()
         {
-            if (this.Data.Length > 5)
+            if (this.Data[this.Data.Length - 1] == '.')
             {
-                this.Result = Convert.ToString(true);
+                char[] result = new char[this.Data.Length];
+
+                for (int i = 0; i < this.Data.Length; i++)
+                {
+                    result[i] = Letters(this.Data[i]);
+                }
+
+                this.Result = new string(result.Reverse().ToArray());
             }
             else
             {
-                this.Result = Convert.ToString(false);
+                this.Result = this.Data;
             }
             this.Modify = true; // Дозвіл запису
         }
@@ -293,5 +301,22 @@ S.Close();
                 MessageBox.Show("Помилка файлу"); // Виведення на екран повідомлення  "Помилка файлу"
             }
         } // Find закінчився
+
+        public static char Letters(char c)
+        {
+            string vowels = "аоуеиiяюэ";
+
+            foreach (char ch in vowels)
+            {
+                if (c == ch)
+                {
+                    return '*';
+                }
+            }
+
+            return c;
+        }
+
+        
     }
 }

@@ -100,7 +100,7 @@ namespace Nemykina_IKM722a_Course_project
                 this.Mode = true;
                 MajorObject.Write(tbInput.Text);// Запис даних у об'єкт
                 MajorObject.Task();// Обробка даних
-                label1.Text = PersonalWork.Rphrase(tbInput.Text);
+                label1.Text = MajorObject.Read();//Відображення
                 пускToolStripMenuItem.Text = "Старт";
             }
         }
@@ -508,6 +508,11 @@ TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
         }
 
         private void tbInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
