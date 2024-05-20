@@ -105,24 +105,30 @@ namespace Nemykina_IKM722a_Course_project
             }
         }
 
-        private void tbInput_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //tClock.Stop();
-            //tClock.Start();
-            //if ((e.KeyChar >= '0') & (e.KeyChar <= '9') | (e.KeyChar == (char)8))
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    tClock.Stop();
-            //    MessageBox.Show("Неправильний символ", "Помилка");
-            //    tClock.Start();
-            //    e.KeyChar = (char)0;
-            //}
-        }
+        private void tbInput_KeyPress(object sender, KeyPressEventArgs e) { 
+               tClock.Stop();
+               tClock.Start();
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+               if ((e.KeyChar >= 'А' && e.KeyChar <= 'я')||(e.KeyChar >= 'a' && e.KeyChar <= 'z') ||
+    (e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar == (char)8) || (e.KeyChar == 'ї') 
+    || (e.KeyChar == 'є') || (e.KeyChar == 'ґ') || (e.KeyChar == 'і')
+    || (e.KeyChar == 'Ї') || (e.KeyChar == 'Є') || (e.KeyChar == 'Ґ') || (e.KeyChar == 'І') || (e.KeyChar == 0) || (e.KeyChar == '.' || (e.KeyChar == ',')))
+
+
+               {
+                 return;
+               }
+               else
+                {
+                tClock.Stop();
+                MessageBox.Show("Неправильний символ", "Помилка");
+                tClock.Start();
+                e.KeyChar = (char)0;
+            }
+
+}
+
+private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             string s;
             s = (System.DateTime.Now - MajorObject.GetTime()).ToString();
@@ -219,16 +225,7 @@ namespace Nemykina_IKM722a_Course_project
             timeLabel.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
         private void Push_Click(object sender, EventArgs e)
         {
             MajorObject.myStack.Push(Stacktb.Text);
@@ -507,14 +504,5 @@ TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
             }
         }
 
-        private void tbInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

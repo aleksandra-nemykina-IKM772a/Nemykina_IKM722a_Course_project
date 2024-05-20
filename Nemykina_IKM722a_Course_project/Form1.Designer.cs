@@ -126,7 +126,6 @@
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(233, 20);
             this.tbInput.TabIndex = 1;
-            this.tbInput.TextChanged += new System.EventHandler(this.tbInput_TextChanged);
             this.tbInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInput_KeyPress);
             // 
             // bStart
@@ -329,7 +328,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Введення даних";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -404,7 +402,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.Pop);
             this.splitContainer1.Panel1.Controls.Add(this.Push);
             this.splitContainer1.Panel1.Controls.Add(this.Stacktb);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -416,7 +413,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.Queuetb);
             this.splitContainer1.Panel2.Controls.Add(this.Enqueue);
             this.splitContainer1.Panel2.ForeColor = System.Drawing.Color.Black;
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(782, 482);
             this.splitContainer1.SplitterDistance = 364;
             this.splitContainer1.TabIndex = 0;
@@ -424,11 +420,11 @@
             // LabelStack
             // 
             this.LabelStack.AutoSize = true;
-            this.LabelStack.Location = new System.Drawing.Point(134, 326);
+            this.LabelStack.Location = new System.Drawing.Point(131, 317);
             this.LabelStack.Name = "LabelStack";
-            this.LabelStack.Size = new System.Drawing.Size(35, 13);
+            this.LabelStack.Size = new System.Drawing.Size(61, 13);
             this.LabelStack.TabIndex = 6;
-            this.LabelStack.Text = "label2";
+            this.LabelStack.Text = "LabelStack";
             // 
             // StackText
             // 
@@ -762,7 +758,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Програма для реверсування рядку з заміною голосних на символ *";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

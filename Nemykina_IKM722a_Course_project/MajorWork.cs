@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Nemykina_IKM722a_Course_project
@@ -64,7 +61,7 @@ namespace Nemykina_IKM722a_Course_project
 
         public void Write(string D)
         {
-             this.Data = D;
+            this.Data = D;
         }
 
         public string Read()
@@ -74,25 +71,33 @@ namespace Nemykina_IKM722a_Course_project
 
         public void Task()
         {
-            if (this.Data[this.Data.Length - 1] == '.')
+            try
             {
-                char[] result = new char[this.Data.Length];
-
-                for (int i = 0; i < this.Data.Length; i++)
+                if (this.Data[this.Data.Length - 1] == '.')
                 {
-                    result[i] = Letters(this.Data[i]);
+                    char[] result = new char[this.Data.Length];
+
+                    for (int i = 0; i < this.Data.Length; i++)
+                    {
+                        result[i] = Letters(this.Data[i]);
+                    }
+
+                    this.Result = new string(result.Reverse().ToArray());
                 }
+                else
+                {
+                    this.Result = this.Data;
+                }
+                this.Modify = true; // Дозвіл запису}
 
-                this.Result = new string(result.Reverse().ToArray());
             }
-            else
-            {
-                this.Result = this.Data;
+            catch {
+                MessageBox.Show("Заповніть поля", "Попередження ");
             }
-            this.Modify = true; // Дозвіл запису
-        }
+    }
 
-        public string ReadSaveTextFileName()
+
+    public string ReadSaveTextFileName()
         {
             return SaveTextFileName;
         }
@@ -125,7 +130,7 @@ namespace Nemykina_IKM722a_Course_project
             }
         }
 
-        
+
 
         public void WriteOpenTextFileName(string S)
         {
@@ -272,7 +277,7 @@ namespace Nemykina_IKM722a_Course_project
                 Buffer D;
                 object O; // буферна змінна для контролю формату
                 BinaryFormatter BF = new BinaryFormatter(); // створення об'єкта для  форматування
-            
+
                 while (S.Position < S.Length)
                 {
                     O = BF.Deserialize(S);
@@ -280,7 +285,7 @@ namespace Nemykina_IKM722a_Course_project
                     if (D == null) break;
                     if (D.Key == N) // перевірка дорівнює чи номер пошуку номеру рядка в                     таблиці
 
-{
+                    {
                         string ST;
                         ST = "Запис містить:" + (char)13 + "No" + Num + "Вхідні дані:" +
 
@@ -288,7 +293,7 @@ namespace Nemykina_IKM722a_Course_project
 
                         MessageBox.Show(ST, "Запис знайдена"); // Виведення на екран        повідомлення "запис містить", номер, вхідних даних і результат
 
-S.Close();
+                        S.Close();
                         return;
                     }
                 }
@@ -304,7 +309,7 @@ S.Close();
 
         public static char Letters(char c)
         {
-            string vowels = "аоуеиiяюэ";
+            string vowels = "аоуеиіяюєАОУЕИІЯЮЄaeiouAEIOU";
 
             foreach (char ch in vowels)
             {
@@ -316,7 +321,5 @@ S.Close();
 
             return c;
         }
-
-        
     }
 }

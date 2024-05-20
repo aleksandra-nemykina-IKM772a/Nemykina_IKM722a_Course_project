@@ -36,5 +36,7 @@ namespace Nemykina_IKM722a_Course_project
             }
             timer1.Start();
         }
+
+        
     }
 }
