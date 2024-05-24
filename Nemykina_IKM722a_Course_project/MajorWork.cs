@@ -83,12 +83,12 @@ namespace Nemykina_IKM722a_Course_project
                     }
 
                     this.Result = new string(result.Reverse().ToArray());
+                    this.Modify = true; // Дозвіл запису
                 }
                 else
                 {
-                    this.Result = this.Data;
+                    MessageBox.Show("Введіть текст, що закінчується крапкою", "Увага!");
                 }
-                this.Modify = true; // Дозвіл запису}
 
             }
             catch {

@@ -85,6 +85,7 @@ namespace Nemykina_IKM722a_Course_project
         {
             if (Mode)
             {
+                MessageBox.Show("Текст повинен закінчуватись на крапку","Попередження");
                 tbInput.Enabled = true;// Режим дозволу введення
                 tbInput.Focus();
                 tClock.Start();
